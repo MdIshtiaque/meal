@@ -8,10 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="myDIV">
     <h1>Welcome to Meal Management System</h1>
     <p>Post your daily bazar list and enjoy a proper meal management system</p>
+    
+            <a class="one active" href="#home">Home</a>
+            <a class="one" href="detailes.php">All detailes</a>
+            <a class="one" href="#request_meal">Request meal</a>
+            <a class="one" href="#about">About</a> 
     </div>
+
+
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("myDIV");
+        var nav = header.getElementsByClassName("one");
+        for (var i = 0; i < nav.length; i++) {
+            nav[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+                });
+            }
+    </script>
+
+
     <div class="container1">
         <form action="index.php" method="post" class="form">
             <input type="text" name="name" id="name" placeholder="Enter your name ">
@@ -35,16 +56,16 @@
                     if($_POST['b_list'] == ""){
                         echo "<h4>You need to fill the forms</h4>";
                     }else{
-                        echo "<p>Your name: $name</p><br>";
-                        echo "<p>Bazar Description: $b_list</p><br>";
+                        echo "<p class='sub_name'>Your name: $name</p><br>";
+                        echo "<p class='sub_b_list'>Bazar Description: $b_list</p><br>";
                         //Calculating total amount
                         preg_match_all('!\d+\.*\d*!', $b_list, $matches);
-                        echo "<h4>The Total amount is : </h4>";
+                        echo "<h4 class='total_amount'>The Total amount is : </h4>";
                         $total = 0;
                         foreach($matches[0] as $price){
                             $total += $price;
                         }
-                        echo $total;
+                        echo "<h4>$total</h4>";
                         
                         
 
@@ -71,7 +92,7 @@
                             
                             //Execute Query
                             $sql = "INSERT INTO `meal`.`blist` (`name`, `b_list`, `total`, `date`) VALUES ('$name', '$b_list',
-                            '$total',current_timestamp());";
+                            '$total',curdate());";
                             mysqli_query($con,$sql);
                             echo "<p>Successfully Posted. Thank you.</p>";
                             //Close the database connection
@@ -100,4 +121,5 @@
         </form>
     </div>
 </body>
+
 </html>
