@@ -18,9 +18,8 @@
             <textarea name="b_list" id="b_list" cols="30" rows="10" placeholder="Enter Bazar Lists with Amount(Example : chicken = 250)"></textarea>
             
             <input type="submit" name="btn1"
-            class="btn1" value="Checkout" />
-            <input type="submit" name="btn2"
-                class="btn2" value="Post" />
+            class="btn1" value="Submit" />
+           
             
             
 
@@ -73,7 +72,8 @@
                             //Execute Query
                             $sql = "INSERT INTO `meal`.`blist` (`name`, `b_list`, `total`, `date`) VALUES ('$name', '$b_list',
                             '$total',current_timestamp());";
-                            echo "<p>Success</p>";
+                            mysqli_query($con,$sql);
+                            echo "<p>Successfully Posted. Thank you.</p>";
                             //Close the database connection
                             $con->close();
         
