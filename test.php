@@ -3,40 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <?php
-        $server = "localhost";
-        $username = "root";
-        $password = "";
-
-        //$database = 'meal';
+    <div class="container">
+        <form action="test.php" method="post">
+            <label for="num">Enter member number: </label>
+        <input type="number" name="number" id="number" >
+        <input type="submit" name="btn1"
+            class="btn1" value="Submit" />
+        </form>
+        </div>
         
+        <script>
+            var numberInput = document.getElementById('number');
+            var serverInputContainer = document.getElementById('container');
 
-        //Create a database connection
-        $con = mysqli_connect($server, $username, $password);
-        
-        //Check for connection success
-        if(!$con)
-        {
-            die("connection to this database failed due to".
-            mysqli_conncet_error());
-        }else{
-            //echo "success";
-        }
-        $sql = ("SELECT date FROM meal.blist `date`");
-        $result = $con->query($sql);
-        $d = date('Y-m-d');
-        while($rows = $result->fetch_assoc()){
-            if($rows['date'] != $d){
-            echo $rows['date'];
+            numberInput.onchange = function() {
+            var inputs = '';
+            for(var i = 0; i < parseInt(numberInput.value); ++i) {
+                inputs = inputs + '<input type="text" name="server_name_' + i + '"/><br/>';
             }
-        }
-
-        //echo $result;
-        $con->close();
-    ?>
+            serverInputContainer.innerHTML = inputs;
+            };
+        </script>
+            
+        
+        
+    
 </body>
 </html>

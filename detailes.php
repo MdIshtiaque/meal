@@ -11,9 +11,9 @@
     <div class="container">
         <h2>This Table shows all meal detailes</h2>
 
-        <a class="one" href="#home">Home</a>
+        <a class="one" href="index.php">Home</a>
         <a class="one active" href="detailes.php">All detailes</a>
-        <a class="one" href="#request_meal">Request meal</a>
+        <a class="one" href="rqst_meal.php">Request meal</a>
         <a class="one" href="#about">About</a> 
     </div>
     
@@ -36,7 +36,7 @@
          }else{
              //echo "success";
          }
-         $sql = ("SELECT * FROM meal.blist ");
+         $sql = ("SELECT * FROM meal.blists ");
          $result = $con->query($sql);
 
          $con->close();

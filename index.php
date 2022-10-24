@@ -12,9 +12,9 @@
     <h1>Welcome to Meal Management System</h1>
     <p>Post your daily bazar list and enjoy a proper meal management system</p>
     
-            <a class="one active" href="#home">Home</a>
+            <a class="one active" href="index.php">Home</a>
             <a class="one" href="detailes.php">All detailes</a>
-            <a class="one" href="#request_meal">Request meal</a>
+            <a class="one" href="rqst_meal.php">Request meal</a>
             <a class="one" href="#about">About</a> 
     </div>
 
@@ -91,7 +91,7 @@
                             }
                             
                             //Execute Query
-                            $sql = "INSERT INTO `meal`.`blist` (`name`, `b_list`, `total`, `date`) VALUES ('$name', '$b_list',
+                            $sql = "INSERT INTO `meal`.`blists` (`name`, `b_list`, `total`, `date`) VALUES ('$name', '$b_list',
                             '$total',curdate());";
                             mysqli_query($con,$sql);
                             echo "<p>Successfully Posted. Thank you.</p>";
