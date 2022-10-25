@@ -60,7 +60,7 @@
         <?php
         if(isset($value)){
             $value = $_POST['ml'];
-            $newArray = $ml[$value];
+            $newArray[$i] = $ml[$value];
             echo $newArray;
         }
         
