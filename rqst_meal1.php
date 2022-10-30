@@ -50,7 +50,7 @@
 
     </div>
     <?php
-    
+
     if (array_key_exists('btn1', $_POST)) {
 
         //echo $_SERVER['REQUEST_METHOD'];
@@ -80,18 +80,17 @@
                 die("connection to this database failed due to" .
                     mysqli_connect_error());
             } else {
-            
             }
 
             $sql = "INSERT INTO `test db`.`meal` (`name`, `meal`, `date`) VALUES ('$str[$i]', '$meal[$i]',
                  '$date');";
             mysqli_query($con, $sql);
-            
+
             $con->close();
         }
     }
     ?>
-    
+
     <!--Preventing resubmission on reload or back-->
     <script>
         if (window.history.replaceState) {

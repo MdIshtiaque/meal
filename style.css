@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
 
-.container{
+.container {
     max-width: 80%;
     background-color: darkgrey;
     color: #fff;
@@ -12,7 +12,7 @@
     margin: auto;
 }
 
-.one{
+.one {
     float: right;
     color: #f2f2f2;
     text-align: center;
@@ -23,41 +23,50 @@
 }
 
 
-.active, .one:hover {
+.active,
+.one:hover {
     background-color: #04AA6D;
     color: white;
 }
 
 
-.container h1,p{
+.container h1,
+p {
     text-align: center;
 }
 
-.container1{
+.container1 {
     max-width: 80%;
     padding: 34px;
     margin: auto;
 
 }
 
-.sub_name,.sub_b_list,.total_amount{
+.sub_name,
+.sub_b_list,
+.total_amount {
     padding-top: 0px;
     margin: 0px;
 }
-input,textarea{
+
+input,
+textarea {
     display: block;
     padding: 10px;
     margin: 17px auto;
     width: 541px;
 
 }
-form{
+
+form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.btn1, .btn2{
+
+.btn1,
+.btn2 {
     color: aliceblue;
     background-color: rgb(53, 46, 46);
     border: 2px solid black;
